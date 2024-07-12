@@ -22,12 +22,31 @@
         display: block;
         height: 300px;
     }
+    .btn{
+        display: flex;
+        justify-content: space-around;
+        
+    }
+    .btnaction{
+        width: 150px;
+        height: 40px;
+        font-size: 20px;
+        border: 1px solid black;
+        border-radius: 20px;
+    }
 </style>
 <body>
     <h1 class="heading">Text-Tool</h1>
     <div class="appcontainer">
         <input type="text" class="bodytext" id="input">
         <p class="resultext" id="resultext"></p>
+
+    </div>
+    <div class="btn">
+        <button type="button" class="btnaction">Uppercase</button>
+        <button type="button"class="btnaction">Lowercase</button>
+        <button type="button"class="btnaction">Charactercount</button>
+        <button type="button"class="btnaction">wordcount</button>
 
     </div>
 </body>
