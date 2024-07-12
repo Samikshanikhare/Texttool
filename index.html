@@ -6,6 +6,9 @@
     <title>Document</title>
 </head>
 <style>
+    body{
+        background-color: #b8f2e6;
+    }
     .heading{
         text-align: center;
         font-size: 80px;
@@ -15,26 +18,31 @@
         margin: 20px auto;
         display: block;
         height: 300px;
-        font-size: 30px;
+        font-size: 40px;
+        border-radius: 10px;
+        background-color: #aed9e0;
     }
     .resultext{
         width: 80%;
         margin: 20px auto;
         display: block;
         height: 300px;
-        font-size: 30px;
+        font-size: 60px;
     }
     .btn{
         display: flex;
         justify-content: space-around;
+       
+
         
     }
     .btnaction{
-        width: 150px;
-        height: 40px;
+        width: 200px;
+        height: 60px;
         font-size: 20px;
         border: 1px solid black;
-        border-radius: 20px;
+        border-radius: 40px;
+        background-color: #faf3dd;
     }
 </style>
 <body>
@@ -45,19 +53,30 @@
 
     </div>
     <div class="btn">
-        <button type="button" class="btnaction" onclick="toUppercase()">Uppercase</button>
-        <button type="button"class="btnaction">Lowercase</button>
-        <button type="button"class="btnaction">Charactercount</button>
-        <button type="button"class="btnaction">wordcount</button>
+        <button type="button" class="btnaction" onclick="getresult('uppercase')">Uppercase</button>
+        <button type="button"class="btnaction"onclick="getresult('lowercase')">Lowercase</button>
+        <button type="button"class="btnaction"onclick="getresult('char count')">Charactercount</button>
+        <button type="button"class="btnaction" onclick="getresult('word count')">wordcount</button>
 
     </div>
 
     <script>
-        function toUppercase(){
+        function getresult(action){
             const inputelement=document.getElementById("input")
             const resultelement=document.getElementById("resultext")
+            if(action=='uppercase'){
+                resultelement.innerText=inputelement.value.toUpperCase()
+            }
+            else if(action=='lowercase'){
+                resultelement.innerText=inputelement.value.toLowerCase()
+            }
+            else if (action=='char count'){
+                 resultelement.innerText=`Total character = ${inputelement.value.length}`
+            }
+            else{
+                resultelement.innerText=`Total word = ${inputelement.value.split(" ").length}`
 
-            resultelement.innerText=inputelement.value.toUpperCase()
+            }
         }
     </script>
 </body>
