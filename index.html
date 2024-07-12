@@ -15,12 +15,14 @@
         margin: 20px auto;
         display: block;
         height: 300px;
+        font-size: 30px;
     }
     .resultext{
         width: 80%;
         margin: 20px auto;
         display: block;
         height: 300px;
+        font-size: 30px;
     }
     .btn{
         display: flex;
@@ -43,11 +45,20 @@
 
     </div>
     <div class="btn">
-        <button type="button" class="btnaction">Uppercase</button>
+        <button type="button" class="btnaction" onclick="toUppercase()">Uppercase</button>
         <button type="button"class="btnaction">Lowercase</button>
         <button type="button"class="btnaction">Charactercount</button>
         <button type="button"class="btnaction">wordcount</button>
 
     </div>
+
+    <script>
+        function toUppercase(){
+            const inputelement=document.getElementById("input")
+            const resultelement=document.getElementById("resultext")
+
+            resultelement.innerText=inputelement.value.toUpperCase()
+        }
+    </script>
 </body>
 </html>
